@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  
+  <title>Ayacucho anuncios</title>
+ 
+  <style>
+    /* Global */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  background-color: #000000;
+  /* Pattern from https://www.heropatterns.com/ */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='105' viewBox='0 0 80 105'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='death-star' fill='%23540606' fill-opacity='0.4'%3E%3Cpath d='M20 10a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm15 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zM20 75a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zm30-65a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm0 65a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zM35 10a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zM5 45a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zm60 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  color: #1e272e;
+  color: #fff;
+  font-size: 16px;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+/* Navigation */
+.nav-main {
+  font-size: 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 20px 0;
+}
+
+.nav-brand {
+  width: 50px;
+}
+
+hr {
+  margin: 10px 0;
+}
+
+/* Responsive Button */
+.menu-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  z-index: 2;
+  display: none;
+}
+
+/* SHOWCASE  est en tx es el css del baner q se puede agregar :)*/
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  font-weight: bold;
+  padding: 10px 20px;
+  background: #262626;
+  color: #fff;
+  font-size: 15px;
+  border: 1px solid #fff;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.showcase {
+  width: 100%;
+  height: 550px;
+  background: url("./img/showcase2.jpg") no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-end;
+  padding-bottom: 50px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.showcase h2,
+.showcase p {
+  margin-bottom: 10px;
+}
+
+.showcase .btn {
+  margin-top: 20px;
+}
+
+/* News Cards */
+.news-cards {
+  display: flex;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin: 0;
+
+}
+
+.news-cards img {
+  width: 100%;
+  height: 180px;
+
+}
+
+.news-cards h3 {
+  font-size: 20px;
+  margin: 10px 0;
+  
+}
+
+.news-cards a {
+  padding: 10px 0;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: bold;
+  
+}
+.social{
+  bottom: auto;
+}
+.borde{
+  background: #751c86;
+  border: solid 2px rgb(197, 129, 4);
+  border-radius: 15px;
+  
+}
+.titulo{
+  text-align: center;
+}
+.autor{
+  text-align: center;
+}
+.containe{
+  width: 90%;
+  height: auto;
+  margin: auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+.box{
+  width: 170px;
+  height: auto;
+  background: rgb(228, 137, 0);
+  color: #000000;
+  margin: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 15px;
+  border-radius: 20px;
+  border: 1px solid gainsboro;
+  display: block;
+}
+p{
+  margin-top: 5px;
+}
+a{
+   text-decoration: none;
+}
+
+</style>
+</head>
+
+<body>
+
+  <div class="menu-btn">
+    <i class="fas fa-bars fa-2x"></i>
+  </div>
+
+  <div class="container">
+    <!-- Navigation -->
+    <nav class="nav-main">
+      <!-- Brand -->
+      <img src="" class="nav-brand">
+      <!-- Left Nav -->
+      <h2 class="nav-menu" >
+       Trabajos Ayacucho
+      </h2>
+
+      <!-- Right Nav -->
+      <p class="nav-menu-right" style="margin-top: 40px;">
+      
+        <i ><b>huamanga</b> </i>
+         
+      </p>
+    </nav>
+    <hr>
+    
+ <!-- remplazar y usar para el vip
+  <div class="containe">
+      <div class="box">
+      <img src="{{vip.imagen.url}}" >
+      <h3 class="titulo">{{vip.titulo}</h3>
+      <p>{{vip.contenido}}</p>
+        <p>{{vip.requisitos1}}</p>
+        <p>{{vip.requisitos2}}</p>
+        <p>{{vip.requisitos3}}</p>
+        <p>{{vip.numero}}</p>
+        <p class="autor"><a href="{{vip.ubicacion}}">Ubicación>></a></p>
+      </div>
+    </div> -->
+    
+    <!-- NEWS CARDS -->
+    <div class="containe">
+    {% for post in posts %} 
+     <div class="box">
+        <h3 class="titulo">{{post.titulo}}</h3>
+        <p> {{post.contenido}}</p>
+        <p>{{post.requisitos1}}</p>
+        <p>{{post.requisitos2}}</p>
+        <p>{{post.requisitos3}}</p>
+        <p>{{post.numero}}</p>
+        <p class="autor"><a href="{{post.ubicacion}}">Ubicación>></a></p>
+      </div>
+      {% endfor %}
+    </div>
+    <!-- Follow -->
+    
+    
+  </div>
+
+
+</body>
+
+</html>
