@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Trabajos ayacucho</title>
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/ProyectoWeb/ProyectoWebApp/css/principal.css">
+    <link rel="stylesheet" href="/ProyectoWeb/ProyectoWebApp/css/estilos.css">
+    <link rel="stylesheet" href="/ProyectoWeb/ProyectoWebApp/css/blog.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="keywords" content="anuncios peru, Anuncios peru, trabajos ayacucho, Trabajos ayacucho">
+</head>
+
+<body>
+  <header class="headerr">
+        <div class="logo">
+            <h1>Trabajos-<b>Ayacucho</b></h1>
+        </div>
+  </header>
+    <!--Portada-->
+
+  <div class="container-all" id="move-content">
+
+    <div class="container-post">
+
+        <input type="radio" id="TODOS" name="categories" value="TODOS" checked>
+        <input type="radio" id="cocina" name="categories" value="cocina">
+        <input type="radio" id="empleada" name="categories" value="empleada">
+        <input type="radio" id="otros" name="categories" value="otros">
+        <input type="radio" id="Talleres" name="categories" value="Talleres">
+        <input type="radio" id="limpieza" name="categories" value="limpieza">
+        <input type="radio" id="venta" name="categories" value="venta">
+        <input type="radio" id="niñera" name="categories" value="niñera">
+        <input type="radio" id="hospedaje" name="categories" value="hospedaje">
+        <input type="radio" id="Construcción" name="categories" value="Construcción">
+        <input type="radio" id="Empresas" name="categories" value="Empresas">
+
+        <div class="container-category">
+            <label for="TODOS">TODOS</label>
+            <label for="empleada">empleada</label>
+            <label for="cocina">cocina</label>
+            <label for="Talleres">Talleres</label>
+            <label for="limpieza">limpieza</label>
+            <label for="venta">venta</label>
+            <label for="niñera">niñera</label>
+            <label for="hospedaje">hospedajes</label>
+            <label for="Empresas">Empresas</label>
+            <label for="Construcción">Construcción</label>
+            <label style="color: aqua;" for="otros">otros</label>
+        </div>
+
+        <div class="posts">
+        {% for post in posts %} 
+          <div class="post" data-category="{{post.requisitos1}}">
+            <img src="{{post.imagen.url}}" style="width: 200px; height: 200px;">
+            <h2>{{post.titulo}}</h2>
+            <span>-{{post.contenido}}</span>
+            <span>-{{post.requisitos1}}</span>
+            <span>-{{post.requisitos2}}</span>
+            <span>-{{post.requisitos3}}</span>
+            <ul class="ctn-tag">
+              <li>llamar:</li>
+              <li>{{post.numero}}</li>
+            </ul>
+            <a href="{{post.ubicacion}}">
+            <button>ubicacion>></button></a>
+            <ul class="id">
+             <li>{{post.autor}}</li>
+            </ul>
+            
+          </div>
+          {% endfor %}
+           <!--fin-->
+        </div>
+    </div>
+
+    <div class="container-footer">	
+
+      <footer>
+        <div class="logo-footer">
+        <img src="/iconos/peru.jpg" >
+        </div>
+
+        <div class="redes-footer">
+          <a href="#"><i class="fab fa-facebook-f icon-redes-footer"></i></a>
+          <a href="#"><i class="fab fa-google-plus-g icon-redes-footer"></i></a>
+          <a href="#"><i class="fab fa-instagram icon-redes-footer"></i></a>
+        </div>
+        <hr>
+        <h4>© 2022 anuncios - peru</h4>
+
+      </footer>
+
+    </div>
+  </div>
+  <script src="/js/script.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body{
+    background: #888888;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: rgb(143, 143, 143);
+    box-shadow: 0 4px 25px -22px black;
+    z-index: 2;
+}
+
+.header-content{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    margin-left:10px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.logo h1 b{
+    color: #46a2fd;
+}
+
+
+.menu {
+    height: 80px;
+}
+
+.menu nav{
+    height: 100%;
+}
+
+.menu nav ul{
+    height: 100%;
+    display: flex;
+    list-style: none;
+}
+
+.menu nav ul li{
+    height: 100%;
+    margin: 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.menu-selected:before{
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: #46a2fd;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.menu nav ul li a{
+    color: #777777;
+    font-size: 18px;
+    transition: color 300ms;
+}
+
+.menu nav ul li a:hover{
+    color: #46a2fd;
+}
+
+.menu .text-menu-selected{
+    color: #46a2fd;
+}
+
+.menu nav ul li a i{
+    display: none;
+}
+
+#icon-menu{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 20px;
+    top: 16px;
+    padding: 10px;
+    font-size: 20px;
+    background: #eeeeeefa;
+    border-radius: 100%;
+    color: #787878;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#icon-menu:hover{
+    opacity: 0.8;
+}
+
+
+
+/*Footer - pie de pagina*/
+
+.container-footer{
+    width: 100%;
+    padding: 40px 0;
+    background: #fff;
+    margin-top: 40px;
+}
+
+.container-footer footer{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container-footer footer .logo-footer{
+    text-align: center;
+}
+
+.container-footer footer .logo-footer img{
+    width: 100px;
+}
+
+.container-footer footer .redes-footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.container-footer footer .redes-footer .icon-redes-footer{
+    font-size: 20px;
+    margin: 20px;
+    background: #efefef;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    color: #a2a2a2;
+}
+
+footer .redes-footer .fa-facebook-f:hover{
+    background: #41579A;
+    color: #fff;
+}
+
+footer .redes-footer .fa-google-plus-g:hover{
+    background: #DE4C34;
+    color: #fff;
+}
+
+footer .redes-footer .fa-instagram:hover{
+    background: linear-gradient(to top right, #FCDE30, #E9712A, #D2313B, #AE4198, #7540A1, #5443A8);
+    color: #fff;
+}
+
+
+.container-footer footer hr{
+    margin-top: 20px;
+    border: none;
+    height: 2px;
+    background: #c0c0c07a;
+}
+
+
+.container-footer h4{
+    text-align: center;
+    margin-top: 40px;
+    color: #8e8e8e;
+    font-weight: 500;
+}
+
+/* Responsive Design - adaptable a dispositivos moviles*/
+
+@media screen and (max-width: 1220px){
+
+    .header-content,
+    .container-footer footer{
+        max-width: 1000px;
+        padding: 0 20px;
+    }
+
+}
+
+
+
+@media screen and (max-width: 800px){
+
+    body{
+        overflow-x: hidden;
+    }
+
+    .container-all{
+        transition: all 300ms cubic-bezier(1,0,0,1);
+    }
+
+    .move-container-all{
+        transform: translateX(300px);
+    }
+
+    .menu{
+        width: 0px;
+        height: 100vh;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        background: #fff;
+        overflow: hidden;
+        transform: translateX(-350px);
+        box-shadow: 10px 0 20px -25px black;
+        transition: all 300ms cubic-bezier(1,0,0,1);
+    }
+
+    .show-lateral {
+        width: 300px;
+        transform: translateX(0px);
+    }
+
+    .menu nav ul {
+        flex-direction: column;
+    }
+
+    .menu nav ul li{
+        max-width: 200px;
+        height: 50px;
+        justify-content: flex-start;
+    }
+
+    .menu-selected:before{
+        width: 0;
+    }
+
+    .menu nav ul li a{
+        margin-top: 40px;
+        color: #858585;
+    }
+
+    .menu nav ul li a i{
+        width: 20px;
+        display: inline-block;
+        margin-right: 10px;
+        color: #46a2fd;
+    }
+
+    #icon-menu{
+        display: flex;
+    }
+
+    .container-aside{
+        flex-wrap: wrap;
+    }
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.bodyy{
+    margin-left: 80px;
+    margin-top: 80px;
+    transition: margin-left 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+main{
+    padding: 20px;
+}
+
+.headerr{
+    width: 100%;
+    height: 80px;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+}
+
+.icon__menu{
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(10px);
+}
+
+.icon__menu i{
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.menu__side{
+    width: 25%;
+    height: 100%;   
+    background: #1783db;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 18px;
+    z-index: 300;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-right: 20px solid #1783db;
+    transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+}
+
+/*Ocultar scroll para chrome, safari y opera*/
+.menu__side::-webkit-scrollbar{
+    display: none;
+}
+
+/*Ocultar scroll para IE, Edge y Firefox*/
+.menu__side{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+.name__page{
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.name__page i{
+    width: 20px;
+    margin-right: 20px;
+}
+
+.options__menu{
+    padding: 20px 30px;
+    position: absolute;
+    top: 80px;
+}
+
+.options__menu a{
+    color: #ffffffb2;
+    cursor: default;
+    display: block;
+    position: relative;
+    transition: color 300ms;
+}
+
+.options__menu a:hover{
+    color: white;
+}
+
+.options__menu .option{
+    padding: 30px 0px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.options__menu .option i{
+    width: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.options__menu .option h4{
+    font-weight: 300;
+    cursor: pointer;
+}
+
+a.selected{
+    color: #fff;
+}
+
+.selected:before{
+    content: '';
+    width: 3px;
+    height: 80%;
+    background: white;
+    position: absolute;
+    top: 10%;
+    left: -30px;
+}
+
+/*Clases para usar en JavaScript*/
+
+.body_move{
+    margin-left: 250px;
+}
+
+.menu__side_move{
+    width: 250px;
+}
+
+
+@media screen and (max-width: 760px){
+    .body_move{
+        margin-left: 0px;
+    }
+
+    .menu__side_move{
+        width: 80px;
+        left: -80px;
+    }
+}
+.optionss{
+  margin-left: 5px;
+ 
+  text-align: center;
+}
+/*Portada*/
+
+
+.blog-container-cover{
+    width: 75%;
+    height: 500px;
+    position: relative;
+    margin-top: 80px;
+    background-image: url(../img/img3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+    
+}
+
+.blog-container-cover:before{
+    content: '';
+    width: 115%;
+    height: 100%;
+    background: rgba(25, 81, 235, 0.76);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 10px;
+}
+
+.container-info-cover{
+    max-width: 70%;
+    height: 500px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.container-info-cover h1{
+    font-size: 60px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.container-info-cover p{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+/*Contenedor de categorias*/
+
+input[type="radio"]{
+    display: none;
+}
+
+.container-category{
+    width:100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.container-category label{
+    padding: 3px 20px;
+    margin: 5px;
+    font-size: 20px;
+    background: #e2e2e2;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container-category label:hover{
+    opacity: 0.8;
+}
+
+
+
+/*Post - Publicaciones*/
+
+.container-post{
+    max-width: 1200px;
+   margin-top: 100px;
+}
+
+.posts{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.posts .post{
+    background: #fff;
+    box-shadow: 0 0 20px -20px black;
+    border-radius: 6px;
+    overflow: hidden;
+    padding-bottom: 20px;
+  border: solid 1px black;
+}
+
+.post .ctn-img{
+    width: 100%;
+}
+
+.post .ctn-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post h2{
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 0px 20px;
+}
+
+.post span{
+    display: block;
+    margin-top: 10px;
+    padding: 0px 20px;
+}
+
+.ctn-tag{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 16px;
+    margin-top: 10px;
+}
+
+.ctn-tag li{
+    list-style: none;
+    font-size: 14px;
+    margin-left: -10px;
+    padding: 6px 10px;
+    background: #e8e8e8;
+    cursor: default;
+}
+
+
+.post button{
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px 50px;
+    font-size: 16px;
+    background: #46a2fd;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.post button:hover{
+    opacity: 0.9;
+}
+
+
+/*sistema de filtrado*/
+
+[value="TODOS"]:checked ~ .posts .post[data-category]{
+    display: block;
+}
+
+[value="cocina"]:checked ~ .posts .post:not([data-category~="cocina"]),
+[value="MedioTiempo"]:checked ~ .posts .post:not([data-category~="mt"]),
+[value="TiempoCompleto"]:checked ~ .posts .post:not([data-category~="tc"]),
+[value="Talleres"]:checked ~ .posts .post:not([data-category~="taller"]),
+[value="Construcción"]:checked ~ .posts .post:not([data-category~="construccion"]),
+[value="Empresas"]:checked ~ .posts .post:not([data-category~="empresa"]){
+    display: none;
+}
+
+[value="TODOS"]:checked ~ .container-category [for="TODOS"],
+[value="cocina"]:checked ~ .container-category [for="cocina"],
+[value="MedioTiempo"]:checked ~ .container-category [for="MedioTiempo"],
+[value="TiempoCompleto"]:checked ~ .container-category [for="TiempoCompleto"],
+[value="Talleres"]:checked ~ .container-category [for="Talleres"],
+[value="Construcción"]:checked ~ .container-category [for="Construcción"],
+[value="Empresas"]:checked ~ .container-category [for="Empresas"]{
+    background: #46a2fd;
+    color: #fff;
+}
+
+@media screen and (max-width: 1200px){
+    .posts{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 900px){
+    .posts{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 580px){
+    .posts{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+.headerr{
+    width: 100%;
+    height: 80px;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+}
+
+
+  </style>
+</body>
+</html>

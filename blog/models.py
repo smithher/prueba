@@ -28,7 +28,7 @@ class Post(models.Model):
     categorias=models.ManyToManyField(Categoria)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now_add=True)
-    imagen=models.ImageField(upload_to="blog", null=True, blank=True)
+    imagen=models.ImageField(upload_to="blog", null=True)
     class Meta:
         verbose_name='post'
         verbose_name_plural='posts'

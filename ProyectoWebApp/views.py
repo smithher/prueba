@@ -6,5 +6,5 @@ from blog.models import Post, Categoria
 
 def blog(request):
     posts=Post.objects.all()
-    return render (request, "ProyectoWebApp/blog.html",{"posts":posts})
+    return render (request, "ProyectoWebApp/index.html",{"posts":posts})
 
